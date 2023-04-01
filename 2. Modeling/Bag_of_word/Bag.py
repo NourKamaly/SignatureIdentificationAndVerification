@@ -157,7 +157,7 @@ if __name__ == '__main__':
 
     
     bov = BOV(no_clusters=100)
-
+    
     bov.path = 'data'
     # set training paths
     bov.train_path = 'Train'
