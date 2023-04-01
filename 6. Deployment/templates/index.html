@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Signiture</title>
+
+  <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/assets/css/unicons.css">
+  <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="static/assets/css/owl.theme.default.min.css">
+
+  <!-- MAIN STYLE -->
+  <link rel="stylesheet" href="static/assets/css/tooplate-style.css">
+
+
+
+
+</head>
+
+<body>
+  <!-- MENU -->
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container">
+      <a class="navbar-brand"><i class='uil uil-user'></i>Signiture</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto" onclick="// SMOOTHSCROLL
+        $(function () {
+          $('.nav-link, .custom-btn-link').on('click', function (event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+              scrollTop: $($anchor.attr('href')).offset().top - 49
+            }, 1000);
+            event.preventDefault();
+          });
+        });">
+          <li class="nav-item">
+            <a href="#about" class="nav-link"><span data-hover="Home">Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#project" class="nav-link"><span data-hover="Signitures">Signitures</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#resume" class="nav-link"><span data-hover="Team Work">Team Work</span></a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-lg-auto">
+          <div class="ml-lg-4">
+            <div class="color-mode d-lg-flex justify-content-center align-items-center">
+              <i class="color-mode-icon"></i>
+              Color mode
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ABOUT -->
+  <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+          <div class="about-text">
+            <small class="small-text">Welcome to <span class="mobile-block">our website!</span></small>
+            <h1 class="animated animated-text">
+              <span class="mr-2">Hey folks, we are </span>
+              <div class="animated-info">
+                <span class="animated-item">a Software engineering</span>
+                <span class="animated-item">College</span>
+                <span class="animated-item">Students</span>
+              </div>
+            </h1>
+            <br>
+
+            <p>Providing a complete project of artificial intelligence to identify and classify signatures and find out
+              if they are real or forged.</p>
+
+            <div class="custom-btn-group mt-4">
+
+              <form action="/upload" method="post" enctype="multipart/form-data" id="myform">
+                <label>
+                  <input type="file" style="display: none;" onchange="readURL(this);" class="inputimage" name="image"
+                    accept="image/*">
+                  <a class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i>
+                    Upload Image
+                  </a>
+                </label>
+                <a href="#classification" class="btn custom-btn custom-btn-bg custom-btn-link"
+                  onclick='document.forms["myform"].submit();'>Start Signiture Classification</a>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-12 col-12">
+          <div class="about-image svg" style="border: dashed; width: 400px; height: 400px;padding: 7px;">
+            <!-- {% if prediction %}
+            <img src="{{img_path}}" height="380px" width="380px">
+            {% endif %} -->
+            <img id="blah" src="{{img_path}}" alt="your image" height="380px" width="380px" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="project py-5" id="project">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-11 text-center mx-auto col-12">
+
+          <div class="col-lg-8 mx-auto">
+            <h2>signature verification</h2>
+          </div>
+          <br>
+          <div class="signitures">
+            <h2> This Signiture Belongs To : </h2>
+            {% if prediction %}
+            <h3 style="color: #ffc200;">{{prediction}} </h3>
+            {% endif %}
+          </div>
+          <br>
+          <div class="signitures">
+            <h2> This Signiture Is: </h2>
+            {% if prediction %}
+            <h3 style="color: #ffc200;">{{prediction2}} </h3>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-6 col-12">
+          <h2 class="mb-4">Team work</h2>
+
+          <div class="timeline">
+            <div class="timeline-wrapper">
+              <div class="timeline-yr">
+                <span>MN</span>
+              </div>
+              <div class="timeline-info">
+                <h3><span>Mohammed<br>Nour El-Dean Abass</span></h3>
+              </div>
+            </div>
+            <div class="timeline-wrapper">
+              <div class="timeline-yr">
+                <span>AS</span>
+              </div>
+              <div class="timeline-info">
+                <h3><span>Abdelrahman<br>Sayed Ali</span></h3>
+              </div>
+            </div>
+            <div class="timeline-wrapper">
+              <div class="timeline-yr">
+                <span>NK</span>
+              </div>
+              <div class="timeline-info">
+                <h3><span>Nour<br>Kamaly</h3>
+              </div>
+            </div>
+            <div class="timeline-wrapper">
+              <div class="timeline-yr">
+                <span>AM</span>
+              </div>
+              <div class="timeline-info">
+                <h3><span>Ahmed<br>Magdy</h3>
+              </div>
+            </div>
+            <div class="timeline-wrapper">
+              <div class="timeline-yr">
+                <span>SM</span>
+              </div>
+              <div class="timeline-info">
+                <h3><span>Sara<br>Mohammed</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+          <h2 class="mb-4 mobile-mt-2">under the supervision of</h2>
+
+          <div class="timeline">
+            <div class="timeline-wrapper">
+              <div class="timeline-yr">
+                <span>DK</span>
+              </div>
+              <div class="timeline-info">
+                <h3><span>DR. Dina Khattab</span></h3>
+                <p>
+                  faculty of computer and information science
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12 col-12">
+          <p class="copyright-text text-center">Copyright &copy; 2022. All rights reserved</p>
+          <p class="copyright-text text-center">The Deep learnning model and the website developed and maintained by our
+            Team</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/assets/js/jquery-3.3.1.min.js"></script>
+  <script src="static/assets/js/popper.min.js"></script>
+  <script src="static/assets/js/bootstrap.min.js"></script>
+  <script src="static/assets/js/Headroom.js"></script>
+  <script src="static/assets/js/owl.carousel.min.js"></script>
+  <script src="static/assets/js/smoothscroll.js"></script>
+  <script src="static/assets/js/custom.js"></script>
+  <script>
+    (function ($) {
+
+      "use strict";
+      // COLOR MODE
+      $('.color-mode').click(function () {
+        $('.color-mode-icon').toggleClass('active')
+        $('body').toggleClass('no-mode')
+      })
+
+      // HEADER
+      $(".navbar").headroom();
+
+      // PROJECT CAROUSEL
+      $('.owl-carousel').owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        nav: true
+      });
+
+      // SMOOTHSCROLL
+      $(function () {
+        $('.nav-link, .custom-btn-link').on('click', function (event) {
+          var $anchor = $(this);
+          $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 49
+          }, 1000);
+          event.preventDefault();
+        });
+      });
+
+      // TOOLTIP
+      $('.social-links a').tooltip();
+
+    })(jQuery);
+
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $('#blah')
+            .attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    };
+  </script>
+</body>
+
+</html>

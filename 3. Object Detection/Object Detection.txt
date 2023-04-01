@@ -1,5 +1,0 @@
-YOLOv7:
-https://www.kaggle.com/code/saraosmanbaza/yolov7-signature-detection
-
-YOLOv5:
-https://www.kaggle.com/code/saraosmanbaza/signature-detection-yolov5

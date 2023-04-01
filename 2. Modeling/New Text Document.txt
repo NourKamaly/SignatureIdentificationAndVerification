@@ -1,8 +1,0 @@
--VGG-16:
-https://colab.research.google.com/drive/15Zahd23WxDjUNjhsuraHOCGtYs0-F_ub?usp=sharing
-
--Iception-V3:
-https://colab.research.google.com/drive/1Ji063ZVjKWyXvas-88cZ7NoRhgoNxGGS?usp=sharing
-
--ResNet-50:
-https://colab.research.google.com/drive/1t3ursrEiTEuiIUTMbLeZicn32SHTP__L?usp=sharing
